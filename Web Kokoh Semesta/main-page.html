@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Kokoh Semesta</title>
+    <link rel="icon" href="./images/Logo_single.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .slider{
+            display: none;
+        }
+        .end-header{
+            display: none;
+        }
+        .container1{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            align-items: none;
+        }
+        .header{
+            width: 100%;
+            height: max-content;
+            background-color: #FF4A4A;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            z-index: 1;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding-bottom: 0.5%;
+        }
+        .blue-header{
+            width: 100%;
+            height: 90%;
+            background-color: rgba(0, 70, 188, 0.9);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-bottom: 0.5%;
+        }
+        .menu-toggle > input{
+            display: none;
+        }
+        .blue-header > img{
+            height: 60%;
+            margin-left: 23px;
+            margin-top: 9px;
+        }
+        .blue-header > ul{
+            display: flex;
+            width: 50%;
+            flex-direction: row;
+            justify-content: flex-end;
+            margin-top: 10px;
+            margin-bottom: 7px;
+        }
+        .blue-header > ul >li{
+            list-style: none;
+            margin-right: 7.5px;
+            margin-left: 7.5px;
+            padding: 5% 2% 5%;
+            border-radius: 2.5px;
+            transition: all .2s ease-in-out;
+            height: 100%;
+        }
+        .blue-header > ul > li > a{
+            text-decoration: none;
+            color: white;
+            font-size: smaller;
+            font-weight: 600;
+        }
+        .space1{
+            width: 100%;
+            background-color: #ffffff;
+            height: 45px;
+            z-index: -1;
+        }
+        .s-container1{
+            width: 100%;
+            height: max-content;
+            background-color: #ffffff;
+            box-shadow: 0px 7px 23px rgba(0, 0, 0, 0.25);
+        }
+        .s-container3{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+        }
+        .judul-1{
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            font-size: 15px;
+            color: #1F1B1B;
+        }
+        .garis-warna-red{
+            width: 100%;
+            height: 9px;
+            background: #FF4A4A;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .garis-warna-blue{
+            width: 100%;
+            height: 9px;
+            background: #0046BC;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            margin-bottom: 3px;
+        }
+        .paragraf-1 > p{
+            text-align: center;
+            font-weight: 600;
+            text-align: center;
+            color: #000000;
+            margin: 2% 2% 2%;
+        }
+        .paragraf-1 > h1{
+            display: none;
+        }
+        .vision-mission{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .vision-mission > div{
+            transition: all .2s;
+        }
+        .vision{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            background: #FFFFFF;
+            border: rgb(224,224,224) solid 1px;
+            border-radius: 25px 0px 0px 0px;
+            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+        }
+        .vision > img{
+            width: 100%;
+            height: 50%;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            transition: all .3s ease-in-out;
+            border-radius: 25px 0px 0px 0px;
+        }
+        .vision > h1{
+            text-align: center;
+            font-weight: 700;
+            text-align: center;
+
+            color: #000000;
+        }
+        .vision > p{
+            font-weight: 400;
+            text-align: center;
+            color: #000000;
+        }
+        .mission{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            background: #FFFFFF;
+            border: rgb(224,224,224) solid 1px;
+            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+            border-radius: 0px 25px 0px 0px;
+        }
+        .mission > img{
+            width: 100%;
+            height: 50%;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            transition: all .3s ease-in-out;
+            border-radius: 0px 25px 0px 0px;
+            margin-bottom: 18px;
+        }
+        .mission > h1{
+            font-weight: 700;
+            text-align: center;
+
+            color: #000000;
+        }
+        .mission > p{
+            font-weight: 400;
+            text-align: center;
+            color: #000000;
+            margin: 0 5px 0;
+        }
+        .product{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 45px;
+        }
+        .judul-product{
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 18px;
+            width: 90%;
+            border-bottom: 2px solid black;
+            text-align: center;
+        }
+        .product > div > div{
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: rgb(224,224,224) solid 1px;
+            transition: all .2s;
+        }
+        .product > div > div >img{
+            width: 100%;
+            height: 50%;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            transition: .3s ease-in-out;
+        }
+        .product > div > div > .line-blue{
+            width: 100%;
+            height: 3px;
+            background: #0046BC;
+            border-radius: 25px 0px 0px 0px;
+            margin-top: 12px;
+        }
+        .product > div > div > .line-red{
+            width: 100%;
+            height: 3px;
+            background: #FF4A4A;
+            border-radius: 25px 0px 0px 0px;
+            margin-top: 2px;
+        }
+        .product > div > div > h1{
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 18px;
+            text-align: center;
+            color: #000000;
+            
+        }
+        .product > div > div > h1 > a{
+            text-decoration: none;
+            color: black;
+        }
+        .product > div > div > p{
+            display: none;
+        }
+        .row-1-product{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            height: max-content;
+            margin-bottom: 50px;
+        }
+        .pressure-vessel{
+            width: 270px;
+            height: 250px;
+            background: #FFFFFF;
+            border-radius: 25px 0px 0px 0px;
+        }
+        .pressure-vessel > img{
+            border-radius: 25px 0px 0px 0px;
+        }
+        .dish-heads{
+            width: 270px;
+            height: 250px;
+            background: #FFFFFF;
+            border-radius: 0px 25px 0px 0px;
+        }
+        .dish-heads > img{
+            border-radius: 0px 25px 0px 0px;
+        }
+        .storage-tanks{
+            width: 270px;
+            height: 250px;
+            background: #FFFFFF;
+            border-radius: 0px;
+        }
+        .piping-system{
+            width: 270px;
+            height: 250px;
+            background: #FFFFFF;
+            border-radius: 0px;
+        }
+        .steel-tower{
+            width: 270px;
+            height: 250px;
+            background: #FFFFFF;
+            border-radius: 0px;
+        }
+        .steel-structure{
+            width: 270px;
+            height: 250px;
+            background: #FFFFFF;
+            border-radius: 0px;
+        }
+        .mechanical-work{
+            width: 270px;
+            height: 250px;
+
+            background: #FFFFFF;
+            border-radius: 0px 0px 0px 25px;
+        }
+        .mechanical-work > img{
+            border-radius: 0px 0px 0px 25px;
+        }
+        .boilers{
+            width: 270px;
+            height: 250px;
+            background: #FFFFFF;
+            border-radius: 0px 0px 25px 0px;
+        }
+        .boilers > img{
+            border-radius: 0px 0px 25px 0px;
+        }
+        .s-container2{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .quality-system{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .quality-system > h1{
+            text-align: center;
+            border-bottom: 2px black solid;
+            width: 90%;
+        }
+        .quality-system > p{
+            text-align: center;
+            font-weight: 600;
+        }
+        .quality-system > img{
+            width: 80%;
+        }
+        .capacity{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .capacity > h1{
+            width: 90%;
+            text-align: center;
+            border-bottom: 2px black solid;
+        }
+        .capacity > p{
+            text-align: center;
+            font-weight: 600;
+        }
+        .area{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items:center ;
+        }
+        .area > h1{
+            text-align: center;
+            width: 90%;
+            border-bottom: 2px black solid;
+        }
+        .area > p{
+            text-align: center;
+            font-weight: 600;
+        }
+        .quality-policy{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .quality-policy > h1{
+            width: 90%;
+            border-bottom: 2px black solid;
+            text-align: center;
+        }
+        .quality-policy > p{
+            text-align: center;
+            font-weight: 600;
+        }
+        .footer{
+            width: 100%;
+            height: max-content;
+            background-color: #FF4A4A;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .foot-red{
+            width: 100%;
+            height: max-content;
+            padding-top: 0.5%;
+            background-color: #FF4A4A;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+        }
+        .foot-blue{
+            width: 100%;
+            height: 100px;
+            background-color: #0046BC;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .foot-blue > img{
+            height: 40%;
+        }
+        .foot-blue > p{
+            text-align: right;
+            font-size: 10px;
+            color: white;
+            font-weight: 500;
+        }
+
+
+
+
+        /* ANIMASI */
+        .blue-header > ul > li:hover{
+            background-color: #FF4A4A;
+        }
+        
+        .line-1:hover{
+            box-shadow: 6px 8px 0px rgba(0, 0, 0, 0.25);
+        }
+        .vision-mission >div:hover{
+            transform: scale(1.05);
+        }
+        .product > div > div:hover{
+            /* border: 1px black solid; */
+            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+            transform: scale(1.05);
+            background-color: #ffffffaf;
+        }
+        .product > div > div > img:hover{
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .product > div > div > h1:hover{
+            text-decoration: 2px underline;
+        }
+
+
+
+
+        /* RESPONSIVE */
+        @media screen and (max-width: 360px) {
+            .menu-toggle span:nth-child(2){
+            transform-origin: 0 0;
+           
+            }
+            .menu-toggle span:nth-child(4){
+                transform-origin: 0 100%;
+            }
+            .menu-toggle > input:checked ~ span:nth-child(2){
+                transform: rotate(45deg) translate(-1px, -1px);
+                
+            }
+            .menu-toggle > input:checked ~ span:nth-child(3){
+                width: 0;
+                opacity: 0;
+            }
+            .menu-toggle > input:checked ~ span:nth-child(4){
+                transform: rotate(-45deg) translate(-1px, 0);
+            }
+        }
+        @media screen and (max-width: 780px) {
+            .container1{
+                overflow-x: hidden;
+            }
+            .blue-header{
+                padding-bottom: 1%;
+                justify-content: space-between;
+            }
+            .header{
+                padding-bottom: 1%;
+            }
+            .blue-header > img{
+                height: 30px;
+            }
+           .blue-header > ul{
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            padding-top: 15%;
+            z-index: -2;
+            background-color: #FF4A4A;
+            transform: translateX(100%);
+            transition: all 1s;
+           }
+           .blue-header > ul.slide{
+            transform: translateX(0);
+           }
+           .menu-toggle{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 10%;
+                
+                margin-right: 10%;
+            }
+            .menu-toggle > input{
+                width: 50px;
+                position: absolute;
+                height: 65%;
+                opacity: 0;
+                border: 2px black solid;
+                display: flex;
+                cursor: pointer;
+            }
+            .menu-toggle > span{
+                width: 100%;
+                height: 5px;
+                background-color: #FFFFFF;
+                border-radius: 25px;
+                margin-top: 5px;
+                transition: all .5s ;
+            }
+            .judul-product{
+                color: #374957;
+                border-bottom: 1px rgb(224,224,224) solid;
+                text-align: left;
+            }
+            .s-container3{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                margin-top: 3%;
+                align-items: center;
+            }
+            .paragraf-1{
+                width: 100%;
+                height: max-content;
+                border: 1px rgb(224,224,224) solid;;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+                margin-bottom: 10%;
+                margin-top: 1%;
+
+            }
+            .paragraf-1 > h1{
+                border-bottom: 1px rgb(224,224,224) solid ;
+                width: 80%;
+                margin: 10% 0 0;
+                padding: 0 0 2%;
+                color: #374957;
+                display: block;
+            }
+            .paragraf-1 > p{
+                text-align: left;
+                font-weight: normal;
+                color: #374957;
+                word-spacing: 2px;
+                margin: 5% 10% 5%;
+            }
+            .vision-mission{
+                flex-direction: column;
+                align-items: center;
+            }
+            .vision{
+                width: 80%;
+                border-radius: 25px 25px 0 0;
+                margin: 0 0 5%;
+                
+            }
+            .vision > img{
+                border-radius: 25px 25px 0 0;
+            }
+            .mission{
+                width: 80%;
+                border-radius: 0 0 25px 25px;
+            }
+            .mission > img{
+                border-radius: 0 0 0 0;
+            }
+            .vision-mission > div >p{
+                color: #374957;
+                padding-bottom: 10%;
+                margin: 0 5% 0;
+            }
+            .vision-mission > div > h1{
+                color: #374957;
+            }
+            .row-1-product > div{
+                box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+            }
+            .s-container2 > div >h1{
+                color: #374957;
+                border-bottom: 1px rgb(224,224,224) solid;
+                text-align: left;
+            }
+            .quality-system >p{
+                text-align: left;
+                margin: 0 3% 3%;
+                color: #374957;
+                font-weight: 300;
+            }
+            .capacity > p{
+                text-align: left;
+                margin: 0 3% 0;
+                color: #374957;
+                font-weight: 300;
+            }
+            .area > p{
+                text-align: left;
+                margin: 0 3% 0;
+                color: #374957;
+                font-weight: 300;
+            }
+            .quality-policy > p{
+                text-align: left;
+                margin: 0 3% 5%;
+                color: #374957;
+                font-weight: 300;
+            }
+            .foot-blue > img{
+                height: 30%;
+            }
+            .foot-blue > p{
+                width: 50%;
+                font-size: 30%;
+            }
+        }
+        @media screen and (max-width: 841px) and (min-width: 780px) {
+            .vision-mission{
+                flex-direction: row;
+            }
+            .vision{
+                width: 40%;
+            }
+            .mission{
+                width: 40%;
+            }
+            .judul-product{
+                color: #374957;
+                border-bottom: 1px rgb(224,224,224) solid;
+                text-align: left;
+            }
+            .s-container3{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                margin-top: 3%;
+                /* border: 1px black solid; */
+                align-items: center;
+            }
+            .paragraf-1{
+                width: 100%;
+                height: max-content;
+                border: 1px rgb(224,224,224) solid;;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+                margin-bottom: 10%;
+                margin-top: 1%;
+
+            }
+            .paragraf-1 > h1{
+                border-bottom: 1px rgb(224,224,224) solid ;
+                width: 80%;
+                margin: 10% 0 0;
+                padding: 0 0 2%;
+                color: #374957;
+                display: block;
+            }
+            .paragraf-1 > p{
+                text-align: left;
+                font-weight: normal;
+                color: #374957;
+                word-spacing: 2px;
+                margin: 5% 10% 5%;
+            }
+            .vision-mission > div >p{
+                color: #374957;
+                padding-bottom: 10%;
+                margin: 0 5% 0;
+            }
+            .vision-mission > div > h1{
+                color: #374957;
+            }
+            .s-container2 > div >h1{
+                color: #374957;
+                border-bottom: 1px rgb(224,224,224) solid;
+                text-align: left;
+            }
+            .quality-system >p{
+                text-align: left;
+                margin: 0 3% 3%;
+                color: #374957;
+                font-weight: 300;
+            }
+            .capacity > p{
+                text-align: left;
+                margin: 0 3% 0;
+                color: #374957;
+                font-weight: 300;
+            }
+            .area > p{
+                text-align: left;
+                margin-left: 2%;
+                color: #374957;
+                font-weight: 300;
+                
+            }
+            .quality-policy > p{
+                text-align: left;
+                margin: 0 3% 5%;
+                color: #374957;
+                font-weight: 300;
+            }
+        }
+        @media screen and (min-width: 840px) {
+            .pressure-vessel{
+                border-radius: 0;
+            }
+            .pressure-vessel > img{
+                border-radius: 0;
+            }
+            .dish-heads{
+                border-radius: 0;
+            }
+            .dish-heads > img{
+                border-radius: 0;
+            }
+            .quality-system > img{
+                width: 40%;
+            }
+            .judul-product{
+                color: #374957;
+                border-bottom: 1px rgb(224,224,224) solid;
+                text-align: left;
+            }
+            .s-container3{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                margin-top: 3%;
+                align-items: center;
+            }
+            .paragraf-1{
+                width: 60%;
+                height: max-content;
+                border: 1px rgb(224,224,224) solid;;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 0 25px 25px 0;
+                box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+
+            }
+            .paragraf-1 > h1{
+                border-bottom: 1px rgb(224,224,224) solid ;
+                width: 80%;
+                margin: 10% 0 0;
+                padding: 0 0 2%;
+                color: #374957;
+                display: block;
+            }
+            .paragraf-1 > p{
+                height: 100%;
+                font-size: larger;
+                margin: 0 0 10%;
+                border-bottom: 1px rgb(224,224,224) solid;
+                padding-bottom: 10%;
+                line-height: 25px;
+            }
+            .vision-mission{
+                flex-direction: column;
+                align-items: center;
+                width: 50%;
+            }
+            .vision{
+                width: 60%;
+                margin-top: 5%;
+                border-radius: 25px 25px 0 0;
+                
+            }
+            .vision > img{
+                border-radius: 25px 25px 0 0;
+            }
+            .mission{
+                width: 60%;
+                margin-top: 2%;
+                border-radius: 0 0 25px 25px;
+            }
+            .mission > img{
+                border-radius: 0 0 0 0;
+            }
+            .paragraf-1 > p{
+                text-align: left;
+                font-weight: normal;
+                color: #374957;
+                word-spacing: 2px;
+                margin: 5% 10% 5%;
+            }
+            .vision-mission > div >p{
+                color: #374957;
+                padding-bottom: 10%;
+                margin: 0 5% 0;
+            }
+            .vision-mission > div > h1{
+                color: #374957;
+            }
+            .s-container2 > div >h1{
+                color: #374957;
+                border-bottom: 1px rgb(224,224,224) solid;
+                text-align: left;
+            }
+            .quality-system >p{
+                text-align: left;
+                margin: 0 3% 3%;
+                color: #374957;
+                font-weight: 300;
+            }
+            .capacity > p{
+                text-align: left;
+                margin: 0 3% 0;
+                color: #374957;
+                font-weight: 300;
+            }
+            .area > p{
+                text-align: left;
+                margin-left: 2%;
+                color: #374957;
+                font-weight: 300;
+                
+            }
+            .quality-policy > p{
+                text-align: left;
+                margin: 0 3% 5%;
+                color: #374957;
+                font-weight: 300;
+            }
+        }
+        @media screen and (min-width: 1115px) {
+            .row-1-product > div {
+                border-radius: 0;
+            }
+            .row-1-product > div > img{
+                border-radius: 0;
+            }
+        }
+        @media screen and (min-width: 1200px) {
+            .blue-header > ul > li{
+                padding: 2% 2% 2%;
+            }
+            .judul-1{
+                font-size: 120%;
+                color:#374957;
+            }
+            .vision{
+                width: 45%;
+                border-radius: 25px 25px 25px 25px;
+            }
+            .mission{
+                width: 45%;
+                border-radius: 25px 25px 25px 25px;
+            }
+            .mission > img{
+                border-radius: 25px 25px 0 0;
+            }
+            .line-1{
+                display: none;
+            }
+            .quality-system > img{
+                width: 25%;
+            }
+            .row-1-product{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 90%;
+            flex-wrap: wrap;
+        }
+            .row-1-product > div{
+            width: 300px;
+            height: 454px;
+            border: 3px black solid;
+            background-color: white;
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 23px 0;
+        }
+        .row-1-product > div > img{
+            width: 300px;
+            height: 237px;
+        }
+        .row-1-product > div > h1{
+            text-transform: uppercase;
+        }
+        .row-1-product > div > h1 > a{
+            text-decoration: none;
+            color: black;
+        }
+        .product > div > div > .line-blue{
+            width: 100%;
+            height: 2%;
+            background: #0046BC;
+            margin-bottom: 1%;
+            border-radius: 0;
+            margin-top: 12px;
+        }
+        .product > div > div > .line-red{
+            width: 100%;
+            height: 2%;
+            background: #FF4A4A;
+            margin-bottom: 1%;
+            border-radius: 0;
+            margin-top: 2px;
+        }
+        .judul-product{
+            color: #374957;
+            border-bottom: 1px rgb(224,224,224) solid;
+            text-align: left;
+        }
+        .paragraf-1 > p{
+            text-align: left;
+            font-weight: normal;
+            color: #374957;
+            word-spacing: 2px;
+            margin: 5% 10% 5%;
+        }
+        .vision-mission > div >p{
+            color: #374957;
+            padding-bottom: 10%;
+            margin: 0 5% 0;
+        }
+        .vision-mission > div > h1{
+            color: #374957;
+        }
+        .s-container2 > div >h1{
+            color: #374957;
+            border-bottom: 1px rgb(224,224,224) solid;
+               
+        }
+        .quality-system >p{
+            text-align: left;
+            margin: 0 3% 3%;
+            color: #374957;
+            font-weight: 300;
+        }
+        .capacity > p{
+            text-align: left;
+            margin: 0 3% 0;
+            color: #374957;
+            font-weight: 300;
+        }
+        .area > p{
+            text-align: left;
+            margin-left: 2%;
+            color: #374957;
+            font-weight: 300;
+                
+        }
+        .quality-policy > p{
+            text-align: left;
+            margin: 0 3% 5%;
+            color: #374957;
+            font-weight: 300;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- START OF HEADER -->
+    <div class="container1">
+        <div class="header">
+            <div class="blue-header">
+                <img src="./images/Logo.png" alt="" class="logo">
+                <ul>
+                    <li>
+                        <a href="#judul-product" target="_self">Our Product</a>
+                    </li>
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#">History Project</a>
+                    </li>
+                </ul>
+                <div class="menu-toggle">
+                    <input type="checkbox">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="image-1.png">
+                </div>
+                <div class="slide">
+                    <img src="image-2.png">
+                </div>
+                <div class="slide">
+                    <img src="image-3.png">
+                </div>
+                <div class="slide">
+                    <img src="image-5.png">
+                </div>
+            </div>
+        </div>
+        <div class="end-header">
+            <div class="blue-header"></div>
+        </div>
+        <!-- END OF HEADER -->
+
+        <div class="space1"></div>
+
+        <!-- START CONTENT -->
+        <div class="s-container1">
+            <div class="judul-1">
+                <h1>
+                    Kokoh Semesta Products & Services
+                </h1>
+            </div>
+            <div class="garis-warna-blue"></div>
+            <div class="garis-warna-red"></div>
+            <div class="s-container3">
+               
+                <div class="paragraf-1">
+                    <h1>
+                        Profile
+                    </h1>
+                    <p class="paragraf-1-1">
+                        Started in the year 1981 as a construction company for site fabrication and erection of storage tanks, building structures and related civil works, 
+                        we have looked forward for the necessity for own works, wherein we can control quality and time schedule better.
+                        We also felt the need to support our government to go through its industrialization programs with self sufficiency. 
+                        Thus was born PT. Kokoh Semesta with its 37.000 sq.m working space, located near Tanjung Priok seaport.
+                        With more than 24 cranes to facilitate rigging, we are forged to build heavy equipment, pressure vessel, heat exchangers, build-up beams for multy story complex steel trusses, steel towers etc. 
+                        Her, we strictly train our personnel to stand up to the quality and time schedule as required by client.
+                        Though basically we thought of catering to the inland requirements, through our hard working, quality consciousness, and fair dealing, 
+                        we have already spread our wing outside Indonesia.
+                    </p>
+                </div>
+                <div class="vision-mission">
+                    <div class="vision">
+                        <img class="img-vision" src="./images/Pertumbuhan-Gedung-Tinggi-Di-Jakarta-Terus-Meningkat-Dery-Ridwansah-3-640x480.jpg" alt="vision">
+                        <h1 class="judul-vision"><i>Vision</i></h1>
+                        <p class="content-vision"><i>Being world-class company in steel construstion</i></p>
+                    </div>
+                    <div class="line-1"></div>
+                    <div class="mission">
+                        <img class="img-mission" src="./images/63427-Screenshot_223.jpg" alt="pabrik">
+                        <h1 class="judul-mission"><i>Mission</i></h1>
+                        <p class="content-mission"><i>To serve the need of industry, housing 
+                            and agriculture in manufacturing 
+                            high quality of steel construction 
+                            in timely manner and low price.</i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="judul-product" id="judul-product">
+                    <h1>Main Products :</h1>
+                </div>
+                <div class="row-1-product">
+                    <div class="pressure-vessel">
+                        <img class="img-pressure-vessel" src="./images/pressure_vessel.jpg" alt="">
+                        <div class="line-blue"></div>
+                        <div class="line-red"></div>
+                        <h1 class="judul-pressure-vessel"><a href="https://en.wikipedia.org/wiki/Pressure_vessel"><i>Pressure Vessel</i></a></h1>
+                        <p class="content-pressure-vessel">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nemo!</p>
+                    </div>
+                    <div class="dish-heads">
+                        <img class="img-dish-heads" src="./images/dish_heads.jpg" alt="">
+                        <div class="line-blue"></div>
+                        <div class="line-red"></div>
+                        <h1 class="judul-dish-heads"><a href="http://www.kokohsemesta.com/dish-heads"><i>Dish Heads</i></a></h1>
+                        <p class="content-dish-heads">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nemo!</p>
+                    </div>
+                    <div class="storage-tanks">
+                        <img class="img-storage-tanks" src="./images/storage_tanks.jpg" alt="">
+                        <div class="line-blue"></div>
+                        <div class="line-red"></div>
+                        <h1 class="judul-storage-tanks"><a href="https://en.wikipedia.org/wiki/Storage_tank"><i>Storage Tanks</i></a></h1>
+                        <p class="content-storage-tanks">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nemo!</p>
+                    </div>
+                    <div class="piping-system">
+                        <img class="img-piping-system" src="./images/piping_system.jpg" alt="">
+                        <div class="line-blue"></div>
+                        <div class="line-red"></div>
+                        <h1 class="judul-piping-system"><a href="https://en.wikipedia.org/wiki/Piping"><i>Piping System</i></a></h1>
+                        <p class="content-piping-system">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nemo!</p>
+                    </div>
+                    <div class="steel-tower">
+                        <img class="img-steel-tower" src="./images/steel_tower.png" alt="">
+                        <div class="line-blue"></div>
+                        <div class="line-red"></div>
+                        <h1 class="judul-steel-tower"><a href="https://en.wikipedia.org/wiki/U.S._Steel_Tower"><i>Steel Tower</i></a></h1>
+                        <p class="content-steel-tower">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nemo!</p>
+                    </div>
+                    <div class="steel-structure">
+                        <img class="img-steel-structure" src="./images/steel_structure.jpg" alt="">
+                        <div class="line-blue"></div>
+                        <div class="line-red"></div>
+                        <h1 class="judul-steel-structure"><a href="https://en.wikipedia.org/wiki/Structural_steel"><i>Steel Structure</i></a></h1>
+                        <p class="content-steel-structure">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nemo!</p>
+                    </div>
+                    <div class="mechanical-work">
+                        <img class="img-mechanical-work" src="./images/mechanical_work.jpg" alt="">
+                        <div class="line-blue"></div>
+                        <div class="line-red"></div>
+                        <h1 class="judul-mechanical-work"><a href="https://id.wikipedia.org/wiki/Usaha_(fisika)"><i>Mechanical Work</i></a></h1>
+                        <p class="content-mechanical-work">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nemo!</p>
+                    </div>
+                    <div class="boilers">
+                        <img class="img-boilers" src="./images/boiler.jpg" alt="">
+                        <div class="line-blue"></div>
+                        <div class="line-red"></div>
+                        <h1 class="judul-boilers"><a href="https://en.wikipedia.org/wiki/Boiler"><i>Boilers</i></a></h1>
+                        <p class="content-boilers">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nemo!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="s-container2">
+            <div class="quality-system">
+                <h1>Quality System</h1>
+                <p>For quality assurance and customer satisfaction, we have implemented quality management system of ISO 9000 : 2000, 
+                    and has obtained certificate ISO 9001 : 2000 from National Certification Body of B4T-KAN.
+                </p>
+                <img src="./images/quality_system.jpg" alt="">
+            </div>
+            <div class="capacity">
+                <h1>Capacity</h1>
+                <p>
+                    Lattice steel tower and structure: 12, 000 metric ton/year. Mechanical: 5,000 metric ton/year.
+                </p>
+            </div>
+            <div class="area">
+                <h1>Area</h1>
+                <p>
+                    Total area: 37,000 m2
+                    Open area: 17,000 m2
+                    Covered area: 20,000 m2
+                </p>
+            </div>
+            <div class="quality-policy">
+                <h1>Quality Policy</h1>
+                <p>
+                    Quality policy of our company is to produce high quality product in timely delivery and competitive price. 
+                    And our quality objective is to make product with zero defect in order to fulfill customer satisfaction
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="foot-red">
+                <div class="foot-blue">
+                    <img src="./images/Logo.png" alt="">
+                    <p>
+                        Kokoh Semesta, Jl. Madya Kebantenan No.2A, RT.1/RW.3, Semper Bar. <br>
+                        Kec. Cilincing, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14130
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
