@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,3 +56,62 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      select {
+        appearance: none;
+        padding: 8px 16px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #f0f0f0;
+        color: #333;
+        cursor: pointer;
+      }
+
+      select option {
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #f0f0f0;
+        color: #333;
+      }
+
+      select:hover,
+      select:focus {
+        background-color: #e0e0e0;
+      }
+    </style>
+  </head>
+  <body>
+    <select id="pilihan">
+      <option value="1">Opsi 1</option>
+      <option value="2">Opsi 2</option>
+      <option value="3">Opsi 3</option>
+    </select>
+    <div id="konten"></div>
+    <script>
+      const pilihan = document.getElementById("pilihan");
+      const konten = document.getElementById("konten");
+
+      pilihan.addEventListener("change", function () {
+        const pilihanValue = pilihan.value;
+
+        if (pilihanValue === "1") {
+          konten.textContent = "Konten untuk opsi 1";
+        } else if (pilihanValue === "2") {
+          konten.textContent = "Konten untuk opsi 2";
+        } else if (pilihanValue === "3") {
+          konten.textContent = "Konten untuk opsi 3";
+        }
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 7d1af794462979fe3c19f53797fa84535e16440a

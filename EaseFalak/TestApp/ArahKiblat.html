@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,3 +71,89 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiblat</title>
+    <style>
+      #compass {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 10px solid black;
+        background-color: gray;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Arah Kiblat</h2>
+      <p>Sudut: <span id="qibla-angle"></span></p>
+    </div>
+
+    <div>
+      <h2>Kompas</h2>
+      <p>Arah: <span id="compass-angle"></span></p>
+      <p>Offset: <span id="offset-angle"></span></p>
+      <div id="compass">
+        <div id="compass-needle"></div>
+      </div>
+    </div>
+    <script>
+      // Mendapatkan lokasi pengguna
+      navigator.geolocation.getCurrentPosition(function (position) {
+        // Mendapatkan koordinat lat dan long pengguna
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+
+        // Menghitung sudut arah kiblat
+        var kiblat = Qibla(lat, long);
+
+        // Mengatur nilai sudut ke elemen HTML
+        document.getElementById("qibla-angle").innerHTML =
+          kiblat.toFixed(2) + "°";
+
+        // Mengaktifkan sensor kompas untuk menentukan arah utara
+        window.addEventListener("deviceorientation", function (e) {
+          // Mengatur nilai arah kompas ke elemen HTML
+          document.getElementById("compass-angle").innerHTML =
+            e.alpha.toFixed(2) + "°";
+
+          // Menghitung nilai offset antara arah kiblat dan arah utara
+          var offset = kiblat - e.alpha;
+
+          // Mengatur nilai offset ke elemen HTML
+          document.getElementById("offset-angle").innerHTML =
+            offset.toFixed(2) + "°";
+
+          // Mengatur nilai transform untuk jarum kompas
+          var needle = document.getElementById("compass-needle");
+          needle.style.transform = "rotate(" + offset.toFixed(2) + "deg)";
+        });
+      });
+
+      // Fungsi untuk menghitung arah kiblat
+      function Qibla(lat, long) {
+        var phiK = (21.4225 * Math.PI) / 180.0;
+        var lambdaK = (39.8262 * Math.PI) / 180.0;
+        var phi = (lat * Math.PI) / 180.0;
+        var lambda = (long * Math.PI) / 180.0;
+        var psi =
+          (180.0 / Math.PI) *
+          Math.atan2(
+            Math.sin(lambdaK - lambda),
+            Math.cos(phi) * Math.tan(phiK) -
+              Math.sin(phi) * Math.cos(lambdaK - lambda)
+          );
+        return psi;
+      }
+    </script>
+  </body>
+</html>
+>>>>>>> 7d1af794462979fe3c19f53797fa84535e16440a
