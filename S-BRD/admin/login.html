@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validasi User</title>
+    <link rel="stylesheet" href="./CSS/stylelogin.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;800&family=Poppins:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="jquery.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="form">
+        <div class="title">Login User</div>
+
+        <form action="" method="post" id="submit">
+          <div class="input_wrap">
+            <label for="input_text">Email Atau Username</label>
+            <div class="input_field">
+              <input type="text" class="input" id="input_text" />
+            </div>
+          </div>
+
+          <div class="input_wrap">
+            <label for="input_text">Password</label>
+            <div class="input_field">
+              <input type="password" class="input" id="input_password" />
+            </div>
+          </div>
+
+          <div class="input_wrap">
+            <span class="error_msg"
+              >Username atau Password anda salah, Isi kembali</span
+            >
+            <input type="submit" value="Login" class="button" id="login_btn" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      var input_text = document.querySelector("#input_text");
+      var input_password = document.querySelector("#input_password");
+      var error_msg = document.querySelector(".error_msg");
+
+      $("#submit").submit(function (e) {
+        e.preventDefault();
+
+        if (input_text.value.length < 1) {
+          error_msg.style.display = "inline-block";
+          input_text.style.border = "1px solid red";
+          return false;
+        }
+
+        if (input_password.value.length < 1) {
+          error_msg.style.display = "inline-block";
+          input_password.style.border = "1px solid red";
+          return false;
+        }
+
+        error_msg.style.display = "none";
+      });
+
+      var input_field = document.querySelectorAll("input");
+
+      input_field.forEach(function (input_item) {
+        input_item.addEventListener("input", function () {
+          if (input_text.value.length > 0) {
+            input_text.style.border = "1px solid rgb(17, 101, 246)";
+          }
+
+          if (input_password.value.length > 0) {
+            input_password.style.border = "1px solid rgb(17, 101, 246)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

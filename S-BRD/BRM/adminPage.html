@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@400;800&family=Poppins:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+    <!-- OpenMaps -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css"
+    />
+    <link rel="stylesheet" href="admin.css">
+    <link rel="shortcut icon" href="./assets/Frame 2.png" type="image/x-icon">
+    <title>Broken Road Mapping ~Admin</title>
+</head>
+<body>
+    <div id="bg">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="alas">
+        <nav class="navbar sticky-top navbar-expand-lg " id="navigation-bar">
+            <div class="nav-content">
+                <div class="logos">
+                    <img src="./assets/image 12.png" alt="" class="blitar-logo" onclick="window.location.href='https://blitarkota.go.id/id/beranda';">
+                    <img src="./assets/image 11.png" alt="" class="blitar-logo1" onclick="window.location.href='https://blitarkota.go.id/id/beranda';">
+                    <div class="nav-content-1">
+                        <h3>
+                            <strong>BRM</strong>
+                        </h3>
+                        <h5>
+                            Powered by <strong class="JLite">JLite</strong>
+                        </h5>
+                    </div>
+                </div> 
+                <div id="burger" onclick="burger()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div> 
+                <div class="nav-content-2">
+                    <div class="login" onclick="window.location.href='https://blitarkota.go.id/id/beranda';">
+                        LOGOUT
+                    </div>
+                    <div class="change" onclick="change1()">
+                        CHANGE
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="section-1">
+            <div class="paragraph-1">
+                <h5>
+                    Present
+                </h5>
+                <h1>
+                    BROKEN ROAD MAPPING
+                </h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor condimentum lacinia quis vel eros donec ac. Facilisis magna etiam tempor orci eu. Elementum pulvinar etiam non quam lacus suspendisse. 
+                </p>
+            </div>
+            <div class="blank-sq-1" id="blank">
+                <img src="./assets/image 12.png" alt="">
+            </div>
+            <div class="blank-sq-2" id="blank">
+                <img src="./assets/image 11.png" alt="">
+            </div>
+        </div>
+        <div id="waiting">
+            <div class="jlite-profile">
+                <h3>
+                    Waiting : 
+                </h3>
+            </div>
+            <table border="1px" cellspacing="0">
+                <tr>
+                    <th>
+                        No.
+                    </th>
+                    <th>
+                        By
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Information
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="section-2">
+            <div class="image-slider">
+                <h3>
+                    On Watch :
+                </h3>
+                <div class="container">
+                    <div class="item">
+                        <img src="./images/sebuah-spanduk-bertuliskan-selamat-datang-ke-kampung-wisata-jeglongan-sewu-terpasang-di-jalan-spanduk-itu-bentuk-kegeraman-war-2_169.jpeg" alt="">
+                        <div class="keterangan">
+                            <div class="line-1">
+                                <h4 class="date">
+                                    12/03/2023
+                                </h4>
+                                <div class="status-box">
+                                    <h4>
+                                        Status :
+                                    </h4>
+                                    <h4>
+                                        Broken
+                                    </h4>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="by-who">
+                                <h2>
+                                    By :
+                                </h2>
+                                <h2 id="nameBy">
+                                    Paijo Supardi
+                                </h2>
+                            </div>
+                            <h3 class="alamat">
+                                Jalan raya Desa Ngembul, Kec. Binangun, Kab. Blitar
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-3">
+            <div class="map" id="map"></div>
+            <div class="paragraph-2">
+                <h4>
+                    Upload your photo! 
+                </h4>
+                <h3>
+                    Help us to make better road!,
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero enim sed faucibus turpis in eu mi bibendum neque. Suspendisse in est ante in. Ipsum nunc aliquet bibendum enim facilisis gravida. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque.
+                </p>
+                <form action="" method="get" class="form-1">
+                    <label for="name">
+                        Name :
+                    </label>
+                    <input type="text" id="name" name="name">
+                    <label for="address">
+                        Address :
+                    </label>
+                    <input type="text" id="address" name="address">
+                    <label for="myfile">Select a photo :</label>
+                    <input type="file" id="myfile" name="myfile"><br><br>
+                    <input type="submit" value="Upload!" id="submit-button">
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <h4>
+                Copyright © 2023 JLite. All rights reserved.
+            </h4>
+            <div class="image-holder-1">
+                <img src="./images/youtube.png" alt="" onclick="window.location.href='https://blitarkota.go.id/id/beranda';">
+                <img src="./images/instagram.png" alt="" onclick="window.location.href='https://blitarkota.go.id/id/beranda';">
+                <img src="./images/twitter.png" alt="" onclick="window.location.href='https://blitarkota.go.id/id/beranda';">
+                <img src="./images/linkedin.png" alt="" onclick="window.location.href='https://blitarkota.go.id/id/beranda';">
+            </div>
+        </div>
+    </div>
+    <div id="tambalBan"></div>
+    <script src="main1.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contoh Penggunaan Muslim Salat API</title>
+  </head>
+  <body>
+    <form>
+      <label for="input-text">Masukkan teks:</label>
+      <input type="text" id="input-text" name="input-text" />
+      <button type="button" onclick="proses()">Kirim</button>
+    </form>
+
+    <h1>Jadwal Sholat di Blitar</h1>
+    <ul id="jadwal-sholat"></ul>
+    <script>
+      function proses() {
+        const inputText = document.getElementById("input-text").value;
+        console.log(`Anda memasukkan teks: ${inputText}`);
+      }
+
+    //   let city = "";
+
+      navigator.geolocation.getCurrentPosition((position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+
+        // membuat request ke OpenCage Geocoder API
+        const apiKey = "6ab5bd0f2abd439a80f2131efc89d561";
+        const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`;
+
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            // menampilkan nama kota di console
+            city = data.results[0].components.city;
+            console.log(`Lokasi pengguna: ${city}`);
+
+            // melakukan request ke API jadwal sholat
+            const options = {
+              method: "GET",
+              headers: {
+                "X-RapidAPI-Key":
+                  "b36a7e571amsh1d1833c029b3e48p14092djsn6e5ac97bae1a",
+                "X-RapidAPI-Host": "muslimsalat.p.rapidapi.com",
+              },
+            };
+
+            fetch(`https://muslimsalat.p.rapidapi.com/${city}.json`, options)
+              .then((response) => response.json())
+              .then((response) => {
+                const jadwalSholat = response.items[0];
+                const jadwalSholatList =
+                  document.getElementById("jadwal-sholat");
+
+                for (const jadwal in jadwalSholat) {
+                  const jadwalLi = document.createElement("li");
+                  jadwalLi.innerText = `${jadwal}: ${jadwalSholat[jadwal]}`;
+                  jadwalSholatList.appendChild(jadwalLi);
+                }
+              })
+              .catch((err) => console.error(err));
+          })
+          .catch((error) => console.error(error));
+      });
+    </script>
+  </body>
+</html>

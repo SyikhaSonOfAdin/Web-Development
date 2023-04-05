@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiblat</title>
+    <style>
+      #compass {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 10px solid black;
+        background-color: gray;
+        margin: 0;
+      }
+      #compass-needle{
+        border: 1px black solid;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Arah Kiblat</h2>
+      <p>Sudut: <span id="qibla-angle"></span></p>
+    </div>
+
+    <div>
+      <h2>Kompas</h2>
+      <p>Arah: <span id="compass-angle"></span></p>
+      <p>Offset: <span id="offset-angle"></span></p>
+      <div id="compass">
+        <div id="compass-needle"></div>
+      </div>
+    </div>
+
+    <h1 id="hah"></h1>
+    <h1 id="hih"></h1>
+    <script>
+      // Mendapatkan lokasi pengguna
+      navigator.geolocation.getCurrentPosition(function (position) {
+        // Mendapatkan koordinat lat dan long pengguna
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+
+        const options = {
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Key":
+              "b36a7e571amsh1d1833c029b3e48p14092djsn6e5ac97bae1a",
+            "X-RapidAPI-Host": "qibla-direction.p.rapidapi.com",
+          },
+        };
+
+        fetch(
+          `https://qibla-direction.p.rapidapi.com/?latitude=${lat}&longitude=${long}`,
+          options
+        )
+          .then((response) => response.json())
+          .then((response) => {
+            const degree = response.degree;
+            const direction = response.direction;
+            document.getElementById("hah").innerHTML = `${degree}`;
+            document.getElementById("hih").innerHTML = `${direction}`;
+          })
+          .catch((err) => console.error(err));
+      });
+    </script>
+  </body>
+</html>

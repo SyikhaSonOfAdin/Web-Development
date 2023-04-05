@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Images/Logo.png">
+    <title>ePKL</title>
+    <style>
+        body{
+            background: linear-gradient(
+                to top left, #FCBA21,
+                #FF5613, #009E80,
+                #4B69FD
+            );
+            background-size: 400% 400%;
+            animation: bg-animate 10s infinite ease-in-out;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        .bg{
+            width: 90%;
+            height: 90%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), 
+            rgba(255, 255, 255, 0) );
+            -webkit-backdrop-filter: blur(28px);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        @keyframes bg-animate {
+                0%{
+                    background-position: 0 50% ;
+                }
+                50%{
+                    background-position: 100% 50%;
+                }
+                100%{
+                    background-position: 0 50%;
+                }
+        }
+        .logo{
+            width: 250px;
+            height: 250px;
+            transition: all .2s;
+           
+
+        }
+        .logo:hover{
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 2em #ffffffb2);
+        }
+        #Icon > g{
+            transition: all .2s;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 2em #ffffffb2);
+        }
+        .logo:hover #Arr1{
+            transform: translateY(-10px);
+        }
+        .logo:hover #Arr2{
+            transform: translate(10px, -10px);
+        }
+        .logo:hover #Arr3{
+            transform: translateX(10px);
+        }
+        .logo:hover #Arr4{
+            transform: translate(10px, 10px);
+        }
+        .logo:hover #Arr5{
+            transform: translateY(10px);
+        }
+        .logo:hover #Arr6{
+            transform: translate(-10px, 10px);
+        }
+        .logo:hover #Arr7{
+            transform: translateX(-10px);
+        }
+        .logo:hover #Arr8{
+            transform: translate(-10px, -10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <a href="https://nodejs.org/en/download/">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo">
+                <g id="Frame 1">
+                <g id="Icon">
+                <g id="Bucket">
+                <rect id="Rectangle 18" x="80.5" y="119.5" width="41" height="2" fill="white" stroke="white"/>
+                <rect id="Rectangle 19" x="64.5" y="91.5" width="72" height="3" fill="white" stroke="white"/>
+                <rect id="Rectangle 25" x="64.5" y="85.5" width="72" height="2" fill="white" stroke="white"/>
+                <rect id="Rectangle 20" x="99.5" y="93.5" width="2" height="26" fill="white" stroke="white"/>
+                <rect id="Rectangle 21" x="114.448" y="94.5997" width="2" height="26" transform="rotate(13 114.448 94.5997)" fill="white" stroke="white"/>
+                <rect id="Rectangle 23" x="84.3753" y="95.075" width="2" height="26" transform="rotate(-13 84.3753 95.075)" fill="white" stroke="white"/>
+                <rect id="Rectangle 22" x="130.06" y="93.4086" width="2" height="28.4074" transform="rotate(21.5 130.06 93.4086)" fill="white" stroke="white"/>
+                <rect id="Rectangle 24" x="69.6485" y="94.3815" width="2" height="28.4074" transform="rotate(-21.5 69.6485 94.3815)" fill="white" stroke="white"/>
+                <rect id="Rectangle 26" x="91.0321" y="74.7011" width="2" height="13.6852" transform="rotate(37.5 91.0321 74.7011)" fill="white" stroke="white"/>
+                <circle id="Ellipse 1" cx="94" cy="71" r="4.5" fill="white" stroke="white"/>
+                <rect id="Rectangle 27" x="107.701" y="75.9186" width="2" height="13.6852" transform="rotate(-37.5 107.701 75.9186)" fill="white" stroke="white"/>
+                <circle id="Ellipse 2" cx="107" cy="71" r="4.5" fill="white" stroke="white"/>
+                </g>
+                <g id="Arr1">
+                <path id="Arrow 1" d="M101.061 31.9393C100.475 31.3536 99.5251 31.3536 98.9393 31.9393L89.3934 41.4853C88.8076 42.0711 88.8076 43.0208 89.3934 43.6066C89.9792 44.1924 90.9289 44.1924 91.5147 43.6066L100 35.1213L108.485 43.6066C109.071 44.1924 110.021 44.1924 110.607 43.6066C111.192 43.0208 111.192 42.0711 110.607 41.4853L101.061 31.9393ZM101.5 48V33H98.5V48H101.5Z" fill="white"/>
+                <rect id="Rectangle 28" x="99.5" y="52.5" width="2" height="2" fill="white" stroke="white"/>
+                <rect id="Rectangle 29" x="99.5" y="58.5" width="2" height="2" fill="white" stroke="white"/>
+                </g>
+                <g id="Arr2">
+                <path id="Arrow 1_2" d="M149.336 52.7455C149.35 51.9172 148.691 51.234 147.862 51.2196L134.364 50.984C133.536 50.9695 132.853 51.6293 132.838 52.4576C132.824 53.2859 133.484 53.969 134.312 53.9835L146.31 54.1929L146.101 66.1911C146.086 67.0194 146.746 67.7026 147.574 67.7171C148.403 67.7315 149.086 67.0718 149.1 66.2435L149.336 52.7455ZM138.088 64.2182L148.878 53.7983L146.794 51.6403L136.004 62.0602L138.088 64.2182Z" fill="white"/>
+                <rect id="Rectangle 28_2" x="133.462" y="65.9055" width="2" height="2" transform="rotate(46 133.462 65.9055)" fill="white" stroke="white"/>
+                <rect id="Rectangle 29_2" x="129.146" y="70.0735" width="2" height="2" transform="rotate(46 129.146 70.0735)" fill="white" stroke="white"/>
+                </g>
+                <g id="Arr3">
+                <path id="Arrow 1_3" d="M168.061 100.061C168.646 99.4749 168.646 98.5251 168.061 97.9393L158.515 88.3934C157.929 87.8076 156.979 87.8076 156.393 88.3934C155.808 88.9792 155.808 89.9289 156.393 90.5147L164.879 99L156.393 107.485C155.808 108.071 155.808 109.021 156.393 109.607C156.979 110.192 157.929 110.192 158.515 109.607L168.061 100.061ZM152 100.5H167V97.5H152V100.5Z" fill="white"/>
+                <rect id="Rectangle 28_3" x="147.5" y="98.5" width="2" height="2" transform="rotate(90 147.5 98.5)" fill="white" stroke="white"/>
+                <rect id="Rectangle 29_3" x="141.5" y="98.5" width="2" height="2" transform="rotate(90 141.5 98.5)" fill="white" stroke="white"/>
+                </g>
+                <g id="Arr4">
+                <path id="Arrow 1_4" d="M147.588 149.436C148.414 149.501 149.136 148.884 149.201 148.058L150.26 134.6C150.325 133.774 149.708 133.052 148.882 132.987C148.056 132.922 147.334 133.539 147.269 134.365L146.328 146.328L134.365 145.386C133.539 145.321 132.817 145.938 132.752 146.764C132.687 147.59 133.303 148.312 134.129 148.377L147.588 149.436ZM136.823 137.509L146.565 148.915L148.846 146.967L139.104 135.561L136.823 137.509Z" fill="white"/>
+                <rect id="Rectangle 28_4" x="135.421" y="132.788" width="2" height="2" transform="rotate(139.5 135.421 132.788)" fill="white" stroke="white"/>
+                <rect id="Rectangle 29_4" x="131.525" y="128.226" width="2" height="2" transform="rotate(139.5 131.525 128.226)" fill="white" stroke="white"/>
+                </g>
+                <g id="Arr5">
+                <path id="Arrow 1_5" d="M99.9393 167.061C100.525 167.646 101.475 167.646 102.061 167.061L111.607 157.515C112.192 156.929 112.192 155.979 111.607 155.393C111.021 154.808 110.071 154.808 109.485 155.393L101 163.879L92.5147 155.393C91.9289 154.808 90.9792 154.808 90.3934 155.393C89.8076 155.979 89.8076 156.929 90.3934 157.515L99.9393 167.061ZM99.5 151V166H102.5V151H99.5Z" fill="white"/>
+                <rect id="Rectangle 28_5" x="101.5" y="146.5" width="2" height="2" transform="rotate(-180 101.5 146.5)" fill="white" stroke="white"/>
+                <rect id="Rectangle 29_5" x="101.5" y="140.5" width="2" height="2" transform="rotate(-180 101.5 140.5)" fill="white" stroke="white"/>
+                </g>
+                <g id="Arr6">
+                <path id="Arrow 1_6" d="M51.0978 146.776C51.0906 147.605 51.7563 148.282 52.5847 148.289L66.0841 148.407C66.9125 148.414 67.5899 147.749 67.5972 146.92C67.6044 146.092 66.9387 145.414 66.1103 145.407L54.1108 145.302L54.2155 133.303C54.2227 132.474 53.557 131.797 52.7287 131.79C51.9003 131.783 51.2228 132.448 51.2156 133.277L51.0978 146.776ZM62.2451 135.206L51.5464 145.719L53.6491 147.859L64.3479 137.345L62.2451 135.206Z" fill="white"/>
+                <rect id="Rectangle 28_6" x="66.8566" y="133.478" width="2" height="2" transform="rotate(-134.5 66.8566 133.478)" fill="white" stroke="white"/>
+                <rect id="Rectangle 29_6" x="71.1361" y="129.273" width="2" height="2" transform="rotate(-134.5 71.1361 129.273)" fill="white" stroke="white"/>
+                </g>
+                <g id="Arr7">
+                <path id="Arrow 1_7" d="M32.9393 98.9393C32.3536 99.5251 32.3536 100.475 32.9393 101.061L42.4853 110.607C43.0711 111.192 44.0208 111.192 44.6066 110.607C45.1924 110.021 45.1924 109.071 44.6066 108.485L36.1213 100L44.6066 91.5147C45.1924 90.9289 45.1924 89.9792 44.6066 89.3934C44.0208 88.8076 43.0711 88.8076 42.4853 89.3934L32.9393 98.9393ZM49 98.5H34V101.5H49V98.5Z" fill="white"/>
+                <rect id="Rectangle 28_7" x="53.5" y="100.5" width="2" height="2" transform="rotate(-90 53.5 100.5)" fill="white" stroke="white"/>
+                <rect id="Rectangle 29_7" x="59.5" y="100.5" width="2" height="2" transform="rotate(-90 59.5 100.5)" fill="white" stroke="white"/>
+                </g>
+                <g id="Arr8">
+                <path id="Arrow 1_8" d="M52.6685 50.9389C51.8402 50.9534 51.1804 51.6366 51.1949 52.4649L51.4305 65.9628C51.4449 66.7911 52.1281 67.4509 52.9564 67.4364C53.7847 67.4219 54.4445 66.7387 54.43 65.9104L54.2206 53.9123L66.2188 53.7028C67.0471 53.6884 67.7068 53.0052 67.6924 52.1769C67.6779 51.3486 66.9947 50.6888 66.1664 50.7033L52.6685 50.9389ZM64.5267 61.7795L53.7366 51.3597L51.6527 53.5177L62.4428 63.9376L64.5267 61.7795Z" fill="white"/>
+                <rect id="Rectangle 28_8" x="66.3744" y="66.3442" width="2" height="2" transform="rotate(-46 66.3744 66.3442)" fill="white" stroke="white"/>
+                <rect id="Rectangle 29_8" x="70.6905" y="70.5121" width="2" height="2" transform="rotate(-46 70.6905 70.5121)" fill="white" stroke="white"/>
+                </g>
+                </g>
+                </g>
+            </svg>
+                
+        </a>
+    </div>
+</body>
+</html>

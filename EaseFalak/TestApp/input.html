@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input</title>
+  </head>
+  <body>
+    <form>
+      <label for="input-text">Masukkan teks:</label>
+      <input type="text" id="input-text" name="input-text" value="Blitar" />
+      <button type="button" onclick="proses()">Kirim</button>
+    </form>
+    <table id="jadwal-sholat" border="1px">
+      <tr>
+        <th>Jadwal Sholat</th>
+      </tr>
+    </table>
+    <script>
+      proses();
+      function proses() {
+        const inputText = document.getElementById("input-text").value;
+        console.log(`Anda memasukkan teks: ${inputText}`);
+        const options = {
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Key":
+              "b36a7e571amsh1d1833c029b3e48p14092djsn6e5ac97bae1a",
+            "X-RapidAPI-Host": "muslimsalat.p.rapidapi.com",
+          },
+        };
+
+        fetch(`https://muslimsalat.p.rapidapi.com/${inputText}.json`, options)
+          .then((response) => response.json())
+          .then((response) => {
+            const jadwalSholat = response.items[0];
+            const jadwalSholatList = document.getElementById("jadwal-sholat");
+            const tz = response.timezone ;
+            console.log(tz) ;
+            let i = 0;
+            const data = [
+              "Tanggal",
+              "Subuh",
+              "Fajar",
+              "Dzuhur",
+              "Ashar",
+              "Maghrib",
+              "Isya",
+            ];
+            for (const jadwal in jadwalSholat) {
+              const trEl = document.createElement("tr");
+              const tdEl = document.createElement("td");
+              tdEl.innerText = `${data[i]}: ${jadwalSholat[jadwal]}`;
+              trEl.appendChild(tdEl);
+              jadwalSholatList.appendChild(trEl);
+              i++;
+            }
+          })
+          .catch((err) => console.error(err));
+      }
+    </script>
+  </body>
+</html>
