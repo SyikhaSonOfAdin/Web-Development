@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,6 +56,64 @@
 
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>Waktu di Indonesia</title>
+  </head>
+  <body>
+    <h1>Waktu di Indonesia</h1>
+    <div>
+      <h2>WIB</h2>
+      <p id="wib"></p>
+    </div>
+    <div>
+      <h2>WITA</h2>
+      <p id="wita"></p>
+    </div>
+    <div>
+      <h2>WIT</h2>
+      <p id="wit"></p>
+    </div>
+    <script>
+      function displayTime() {
+        const now = new Date();
+        const options = {
+          timeZone: "Asia/Jakarta",
+          hour12: false,
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+        };
+        const wibTime = now.toLocaleTimeString("id-ID", options);
+        options.timeZone = "Asia/Makassar";
+        const witaTime = now.toLocaleTimeString("id-ID", options);
+        options.timeZone = "Asia/Jayapura";
+        const witTime = now.toLocaleTimeString("id-ID", options);
+        document.getElementById("wib").textContent = wibTime;
+        document.getElementById("wita").textContent = witaTime;
+        document.getElementById("wit").textContent = witTime;
+      }
+
+      // memperbarui waktu setiap detik
+      setInterval(displayTime, 1000);
+    </script>
+  </body>
+</html>
+
+  </body>
+</html>
+>>>>>>> 7d1af794462979fe3c19f53797fa84535e16440a
 =======
 <!DOCTYPE html>
 <html lang="en">

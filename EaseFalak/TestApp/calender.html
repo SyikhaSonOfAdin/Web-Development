@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -85,6 +86,94 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalender</title>
+  </head>
+  <body>
+    <script>
+      function createCalendar(year) {
+        // Create new date object with first day of the year
+        const firstDay = new Date(year, 0, 1);
+
+        // Get the day of the week (0-6) of the first day of the year
+        const firstDayOfWeek = firstDay.getDay();
+
+        // Create array to store calendar rows
+        const calendarRows = [];
+
+        // Create array to store calendar cells
+        let calendarCells = [];
+
+        // Create loop to generate calendar cells
+        for (let i = 0; i < 12; i++) {
+          // Create new date object with the first day of the current month
+          const currentDate = new Date(year, i, 1);
+
+          // Get the number of days in the current month
+          const daysInMonth = new Date(year, i + 1, 0).getDate();
+
+          // Add blank cells to calendarCells array for days before the first day of the month
+          for (let j = 0; j < currentDate.getDay(); j++) {
+            calendarCells.push("<td></td>");
+          }
+
+          // Add cells for each day of the month
+          for (let j = 1; j <= daysInMonth; j++) {
+            calendarCells.push(`<td>${j}</td>`);
+          }
+
+          // Add blank cells to calendarCells array for days after the last day of the month
+          const cellsRemaining = 42 - calendarCells.length;
+          for (let j = 0; j < cellsRemaining; j++) {
+            calendarCells.push("<td></td>");
+          }
+
+          // Add calendar cells to calendarRows array
+          calendarRows.push(`
+      <tr>
+        <td colspan="7">${currentDate.toLocaleString("default", {
+          month: "long",
+        })}</td>
+      </tr>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+      <tr>
+        ${calendarCells.join("")}
+      </tr>
+    `);
+
+          // Reset calendarCells array for the next month
+          calendarCells = [];
+        }
+
+        // Create table element and add calendar rows to it
+        const calendarTable = document.createElement("table");
+        calendarTable.innerHTML = calendarRows.join("");
+
+        // Return the calendar table
+        return calendarTable;
+      }
+
+      // Example usage: create a calendar for the year 2023 and add it to the body of the page
+      const calendar = createCalendar(2029);
+      document.body.appendChild(calendar);
+    </script>
+  </body>
+</html>
+>>>>>>> 7d1af794462979fe3c19f53797fa84535e16440a
 =======
 <!DOCTYPE html>
 <html lang="en">

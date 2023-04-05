@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -327,6 +328,336 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet</title>
+    <style>
+      .planet {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        /* border: 1px black dashed; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: rotate; /* Animasi rotasi planet */
+        animation-duration: 5s; /* Durasi animasi rotasi planet */
+        animation-iteration-count: infinite; /* Mengulang animasi rotasi planet secara terus menerus */
+        animation-timing-function: linear; /* Animasi rotasi planet berjalan dengan kecepatan konstan */
+      }
+      .planet1 {
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        border: 1px black dashed;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        animation-name: rotate; /* Animasi rotasi planet */
+        animation-duration: 5s; /* Durasi animasi rotasi planet */
+        animation-iteration-count: infinite; /* Mengulang animasi rotasi planet secara terus menerus */
+        animation-timing-function: linear; /* Animasi rotasi planet berjalan dengan kecepatan konstan */
+      }
+      .planet2 {
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        border: 1px black dashed;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        animation-delay: 2s;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        animation-name: rotate; /* Animasi rotasi planet */
+        animation-duration: 5s; /* Durasi animasi rotasi planet */
+        animation-iteration-count: infinite; /* Mengulang animasi rotasi planet secara terus menerus */
+        animation-timing-function: linear; /* Animasi rotasi planet berjalan dengan kecepatan konstan */
+      }
+      .planet2 > svg{
+        z-index: 2;
+      }
+      @keyframes rotate {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg); /* Awal rotasi planet */
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg); /* Akhir rotasi planet */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="planet">
+      <div class="planet1"></div>
+      <svg
+        width="80"
+        height="80"
+        viewBox="0 0 39 39"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="19.5805"
+          cy="19.4194"
+          r="18.1694"
+          fill="#E3E0E4"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <path
+          d="M8.8114 5.64221C3.11041 23.2199 15.4623 34.9384 33.6736 30.0293C13.2456 50.7742 -9.71628 20.3695 8.8114 5.64221Z"
+          fill="#D4CFD5"
+        />
+        <circle
+          cx="6.91178"
+          cy="22.5865"
+          r="1.25"
+          fill="#D4CFD5"
+          stroke="black"
+          stroke-width="1.30059"
+        />
+        <circle
+          cx="11.5034"
+          cy="16.7273"
+          r="2.89223"
+          fill="#D4CFD5"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <circle
+          cx="12.2962"
+          cy="10.868"
+          r="0.5"
+          fill="black"
+          stroke="black"
+          stroke-width="0.266862"
+        />
+        <circle
+          cx="26.5489"
+          cy="30.8211"
+          r="0.5"
+          fill="black"
+          stroke="black"
+          stroke-width="0.266862"
+        />
+        <circle
+          cx="11.3456"
+          cy="27.0205"
+          r="0.5"
+          fill="black"
+          stroke="black"
+          stroke-width="0.266862"
+        />
+        <circle
+          cx="33.1984"
+          cy="16.5689"
+          r="0.5"
+          fill="black"
+          stroke="black"
+          stroke-width="0.266862"
+        />
+        <circle
+          cx="24.964"
+          cy="7.70081"
+          r="0.5"
+          fill="black"
+          stroke="black"
+          stroke-width="0.266862"
+        />
+        <circle
+          cx="20.2135"
+          cy="7.7009"
+          r="1.46701"
+          fill="#D4CFD5"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <circle
+          cx="30.9819"
+          cy="20.6862"
+          r="1.25"
+          fill="#D4CFD5"
+          stroke="black"
+          stroke-width="1.30059"
+        />
+        <circle
+          cx="19.4217"
+          cy="18.3108"
+          r="1.25"
+          fill="#D4CFD5"
+          stroke="black"
+          stroke-width="1.6173"
+        />
+        <circle
+          cx="27.3392"
+          cy="12.61"
+          r="1.94208"
+          fill="#D4CFD5"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <circle
+          cx="28.9237"
+          cy="26.8622"
+          r="1.94208"
+          fill="#D4CFD5"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <circle
+          cx="19.1051"
+          cy="29.3959"
+          r="2.89223"
+          fill="#D4CFD5"
+          stroke="black"
+          stroke-width="1.5"
+        />
+      </svg>
+    </div>
+    <div class="planet2">
+      <svg
+        width="160"
+        height="160"
+        viewBox="0 0 49 49"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.1254 12.4369C14.8369 13.5362 13.4788 14.8942 12.4441 14.1182C10.514 12.1569 9.45673 11.0266 7.20603 9.46218C5.91282 8.81551 6.94749 6.74616 8.69337 7.39283C11.1627 9.1843 12.2349 10.3487 14.1254 12.4369Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M21.4329 8.75084C21.9502 10.1088 20.0749 11.0142 19.1695 9.78551C18.2187 6.961 17.5968 5.36126 16.3242 2.47814C16.0655 1.05547 18.0055 0.473467 18.7169 1.5728C20.0478 4.3857 20.6345 5.9571 21.4329 8.75084Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M30.8096 8.75084C29.9042 9.91484 28.2229 9.13884 28.5462 7.71617C29.2869 5.70071 29.6694 4.56607 30.8096 2.60748C31.5856 1.3788 33.3963 2.28414 33.0083 3.64215L30.8096 8.75084Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M38.3756 13.7302C37.4425 14.7283 35.5303 13.9242 36.3709 12.3722C37.6448 10.6542 39.8629 10.2382 41.5443 8.4275C43.2256 6.61683 45.101 8.88017 43.2256 10.2382C41.538 11.3515 39.3087 12.7321 38.3756 13.7302Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M42.6436 20.5202C41.4149 20.7789 40.4449 19.0976 41.7383 18.2569C43.439 17.4673 44.4571 17.1352 46.3296 16.6402C47.9463 16.4462 48.6576 18.1922 47.235 18.9682C45.3616 19.4353 44.3627 19.7861 42.6436 20.5202Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M42.8376 26.9869C41.5443 26.5343 42.0616 24.3356 43.6136 24.6589C45.1656 24.9822 44.9716 24.7882 46.459 25.3056C47.9463 25.8229 47.429 28.0216 45.8123 27.6983C44.1956 27.3749 44.131 27.4396 42.8376 26.9869Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M40.5743 35.717C39.2163 34.941 40.3156 32.9363 41.5443 33.389C42.773 33.8416 45.1656 34.2296 46.459 35.0056C47.7523 35.7816 46.653 37.7863 45.4243 37.269C44.1956 36.7516 41.9323 36.493 40.5743 35.717Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M36.0476 42.5717C35.5303 41.6663 37.1469 40.179 37.9876 41.0843C38.8283 41.9897 40.1863 42.7657 41.0269 44.1883C41.8676 45.611 40.1863 46.969 39.2163 45.805C38.2463 44.641 36.5649 43.477 36.0476 42.5717Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M28.6109 42.2483C28.6109 40.955 26.0889 40.567 26.0889 42.2483V47.0337C26.0889 48.6504 28.6109 48.5857 28.6109 47.0337V42.2483Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M17.8115 42.7657C18.5875 41.343 16.8415 40.179 15.8715 41.343C14.9015 42.507 14.7722 42.7657 13.8022 44.3177C12.8322 45.8697 14.9662 47.163 15.8069 45.805C16.6475 44.447 17.0355 44.1883 17.8115 42.7657Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M10.1808 36.9456C11.3448 36.2343 10.2455 34.165 8.82283 35.0056C7.40015 35.8463 4.68406 38.1096 3.26147 39.6616C1.83889 41.2137 3.58487 43.089 5.26615 41.2137C6.94742 39.3383 9.01683 37.657 10.1808 36.9456Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M8.37022 28.6683C9.40489 28.4743 9.53423 26.2756 7.98222 26.2756C6.43021 26.2756 2.93824 27.1809 1.64486 27.7629C0.351485 28.3449 1.12753 30.6729 2.87353 29.9616C4.61954 29.2503 7.33555 28.8623 8.37022 28.6683Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M8.95223 20.5849C10.3749 20.7142 10.5689 18.2569 8.95223 18.1275C7.33556 17.9982 5.07222 17.8042 3.77888 17.8042C2.48554 17.8042 2.03287 20.3262 3.77888 20.3262C5.52489 20.3262 7.52956 20.4556 8.95223 20.5849Z"
+          fill="#FFC107"
+        />
+        <path
+          d="M14.1254 12.4369C14.8369 13.5362 13.4788 14.8942 12.4441 14.1182C10.514 12.1569 9.45673 11.0266 7.20603 9.46218C5.91282 8.81551 6.94749 6.74616 8.69337 7.39283C11.1627 9.1843 12.2349 10.3487 14.1254 12.4369Z"
+          stroke="black"
+        />
+        <path
+          d="M21.4329 8.75084C21.9502 10.1088 20.0749 11.0142 19.1695 9.78551C18.2187 6.961 17.5968 5.36126 16.3242 2.47814C16.0655 1.05547 18.0055 0.473467 18.7169 1.5728C20.0478 4.3857 20.6345 5.9571 21.4329 8.75084Z"
+          stroke="black"
+        />
+        <path
+          d="M30.8096 8.75084C29.9042 9.91484 28.2229 9.13884 28.5462 7.71617C29.2869 5.70071 29.6694 4.56607 30.8096 2.60748C31.5856 1.3788 33.3963 2.28414 33.0083 3.64215L30.8096 8.75084Z"
+          stroke="black"
+        />
+        <path
+          d="M38.3756 13.7302C37.4425 14.7283 35.5303 13.9242 36.3709 12.3722C37.6448 10.6542 39.8629 10.2382 41.5443 8.4275C43.2256 6.61683 45.101 8.88017 43.2256 10.2382C41.538 11.3515 39.3087 12.7321 38.3756 13.7302Z"
+          stroke="black"
+        />
+        <path
+          d="M42.6436 20.5202C41.4149 20.7789 40.4449 19.0976 41.7383 18.2569C43.439 17.4673 44.4571 17.1352 46.3296 16.6402C47.9463 16.4462 48.6576 18.1922 47.235 18.9682C45.3616 19.4353 44.3627 19.7861 42.6436 20.5202Z"
+          stroke="black"
+        />
+        <path
+          d="M42.8376 26.9869C41.5443 26.5343 42.0616 24.3356 43.6136 24.6589C45.1656 24.9822 44.9716 24.7882 46.459 25.3056C47.9463 25.8229 47.429 28.0216 45.8123 27.6983C44.1956 27.3749 44.131 27.4396 42.8376 26.9869Z"
+          stroke="black"
+        />
+        <path
+          d="M40.5743 35.717C39.2163 34.941 40.3156 32.9363 41.5443 33.389C42.773 33.8416 45.1656 34.2296 46.459 35.0056C47.7523 35.7816 46.653 37.7863 45.4243 37.269C44.1956 36.7516 41.9323 36.493 40.5743 35.717Z"
+          stroke="black"
+        />
+        <path
+          d="M36.0476 42.5717C35.5303 41.6663 37.1469 40.179 37.9876 41.0843C38.8283 41.9897 40.1863 42.7657 41.0269 44.1883C41.8676 45.611 40.1863 46.969 39.2163 45.805C38.2463 44.641 36.5649 43.477 36.0476 42.5717Z"
+          stroke="black"
+        />
+        <path
+          d="M28.6109 42.2483C28.6109 40.955 26.0889 40.567 26.0889 42.2483V47.0337C26.0889 48.6504 28.6109 48.5857 28.6109 47.0337V42.2483Z"
+          stroke="black"
+        />
+        <path
+          d="M17.8115 42.7657C18.5875 41.343 16.8415 40.179 15.8715 41.343C14.9015 42.507 14.7722 42.7657 13.8022 44.3177C12.8322 45.8697 14.9662 47.163 15.8069 45.805C16.6475 44.447 17.0355 44.1883 17.8115 42.7657Z"
+          stroke="black"
+        />
+        <path
+          d="M10.1808 36.9456C11.3448 36.2343 10.2455 34.165 8.82283 35.0056C7.40015 35.8463 4.68406 38.1096 3.26147 39.6616C1.83889 41.2137 3.58487 43.089 5.26615 41.2137C6.94742 39.3383 9.01683 37.657 10.1808 36.9456Z"
+          stroke="black"
+        />
+        <path
+          d="M8.37022 28.6683C9.40489 28.4743 9.53423 26.2756 7.98222 26.2756C6.43021 26.2756 2.93824 27.1809 1.64486 27.7629C0.351485 28.3449 1.12753 30.6729 2.87353 29.9616C4.61954 29.2503 7.33555 28.8623 8.37022 28.6683Z"
+          stroke="black"
+        />
+        <path
+          d="M8.95223 20.5849C10.3749 20.7142 10.5689 18.2569 8.95223 18.1275C7.33556 17.9982 5.07222 17.8042 3.77888 17.8042C2.48554 17.8042 2.03287 20.3262 3.77888 20.3262C5.52489 20.3262 7.52956 20.4556 8.95223 20.5849Z"
+          stroke="black"
+        />
+        <circle
+          cx="25.7007"
+          cy="25.3702"
+          r="10.4287"
+          fill="#FFC107"
+          stroke="black"
+        />
+      </svg>
+    </div>
+    <script>
+      // Mengatur kecepatan rotasi planet
+      let speed = 1; // Kecepatan rotasi planet dalam satuan derajat per detik
+      let planet = document.querySelector(".planet");
+
+      setInterval(function () {
+        let rotate = "rotate(" + speed + "deg)";
+        planet.style.transform = rotate;
+        speed += 1; // Menambah kecepatan rotasi planet
+      }, 1000);
+    </script>
+  </body>
+</html>
+>>>>>>> 7d1af794462979fe3c19f53797fa84535e16440a
 =======
 <!DOCTYPE html>
 <html lang="en">
